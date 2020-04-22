@@ -68,13 +68,30 @@ function ShakaPlayer({ src, config, autoPlay, width, height }, ref) {
 
   return (
     <div ref={uiContainerRef}>
-      <video
-        ref={videoRef}
-        autoPlay={autoPlay}
-        width={width}
-        height={height}
-        style={{ maxWidth: '100%' }}
-      />
+      {
+        src !== ""
+        &&
+        <video
+          ref={videoRef}
+          src={src}
+          autoPlay={autoPlay}
+          width={width}
+          height={height}
+          style={{ maxWidth: '100%' }}
+        />
+      }
+      {
+        src == ""
+        &&
+        <video
+          ref={videoRef}
+          autoPlay={autoPlay}
+          width={width}
+          height={height}
+          style={{ maxWidth: '100%' }}
+        />
+
+      }
     </div>
   );
 }
